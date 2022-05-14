@@ -1,0 +1,136 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MaterPrincipal.Master.cs" Inherits="Web_CCPS_APP.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+<%--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">--%>
+    <link href="bootstrap-5.1.3-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="bootstrap-5.1.3-dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="bootstrap-5.1.3-dist/css/sidebars.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"> 
+ 
+<%--<img src="Images/Master.jpg" style="width: 100%;" />--%>
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+<div class="row">
+    <div class="col-lg-4 p-3 text-white bg-success" style="width: 20%;height:90%; margin-left:0%"><!--Sa Koulè e size-->
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto list-unstyled ps-0">
+      <li class="nav-item">
+        <a href="Default.aspx" class="nav-link active " style="background-color: #10346b; aria-current="page"><!--Sa Koulè -->
+         <i class="bi bi-house-door"></i>&nbsp
+          Home
+        </a>
+      </li>
+     
+      <li>
+        <a href="Personne.aspx" class="nav-link text-light" >
+         <i class="bi bi-pencil-square"></i>&nbsp
+          Inscription
+        </a>
+      </li>
+      <li>
+       <a href="AjouterEtudiantDansClasse.aspx" class="nav-link text-white">
+          <i class="bi bi-person-plus"></i>&nbsp
+            Ajouter Etudiant Dans Classe
+        </a>
+      </li>
+       <li>
+        <a href="ChangerHoraireEtudiant.aspx" class="nav-link text-white">
+         <i class="bi bi-calendar2"></i>&nbsp
+          Changer Horaire
+        </a>
+      </li>
+      <li>
+        <a href="EnleverEtudiant.aspx" class="nav-link text-white">
+          <i class="bi bi-person-dash"></i>&nbsp
+          Enlever Etudiant dans Classe
+        </a>
+      </li>
+       <li>
+        <a href="VoirEtudiantParClasse.aspx" class="nav-link text-white">
+          <i class="bi bi-eye"></i>&nbsp
+          Voir Etudiant Par Classe
+        </a>
+      </li>
+      <li>
+        <a href="EtudiantGraduee.aspx" class="nav-link text-white">
+         <i class="bi bi-mortarboard"></i>&nbsp
+          Etudiant Déjà Graduée
+        </a>
+      </li>
+     <li>
+        <a href="AllStudentList.aspx" class="nav-link text-white">
+         <i class="bi bi-person-lines-fill"></i>&nbsp
+          List De Tous Les Etudiants
+        </a>
+      </li>
+      <li>
+        <a href="VoirEtudiantParClasseExcel.aspx" class="nav-link text-white">
+          <i class="bi bi-file-spreadsheet"></i>&nbsp
+          Voir Etudiant Par Classe Excel
+        </a>
+      </li>
+        <hr />
+     <li class="mb-1">   
+        <a class="nav-link active" style="background-color: #10346b; aria-current="page" data-bs-toggle="collapse" onclick="toggleText()" href="#"> 
+           <i class="bi bi-caret-right"></i>&nbsp
+            Admin Setup
+          &nbsp<i class="bi bi-tools"></i>
+        </a>
+        <div class="collapse show" id="home_collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 large">
+            <li><a href="SalleDeClasse.aspx" class="link-light rounded">Salle De Classe</a></li>
+            <li><a href="JourDeClasse.aspx" class="link-light rounded">Jour De Classe</a></li>
+            <li><a href="HeureDeClasse.aspx" class="link-light rounded">Heure De Classe</a></li>
+            <li><a href="CreerUneSession.aspx" class="link-light rounded">Creer Une Session</a></li>
+            <li><a href="ChoixDesProfesseurs.aspx" class="link-light rounded">Choix Des Professeurs</a></li>
+            <li><a href="AjouterClasseDansLaSessionCourante.aspx" class="link-light rounded">Add Classes In Session</a></li>
+            <li><a href="EditSession.aspx" class="link-light rounded">Editer une Session</a></li>
+            <li><a href="VoirLesSessions.aspx" class="link-light rounded">Voir Tout Les Sessions</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+    <hr>
+
+  </div>
+
+
+    <!-- Sidebar End Code -->    
+  <div class=" col-lg-8" style="width: 70%; margin-left:2%">
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+   </div>
+  </div>
+<%--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>--%>
+    <script src="bootstrap-5.1.3-dist/js/bootstrap.js"></script>
+    <script src="bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
+    <script src="bootstrap-5.1.3-dist/js/sidebars.js"></script>
+    <%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>--%>
+
+    <script>
+        function toggleText(){
+            var x = document.getElementById("home_collapse");
+          if (x.style.display === "none") {
+              x.style.display = "block";
+          } else {
+            x.style.display = "none";
+            }        
+        }
+      
+    </script>
+    
+</body>
+</html>
